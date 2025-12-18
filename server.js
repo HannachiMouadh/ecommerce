@@ -25,7 +25,13 @@ mongoose
 app.use("/api/categories", categorieRouter);
 app.use('/api/scategories', scategorieRouter);
 app.use('/api/articles', articleRouter);
+
+//server
 app.listen(process.env.PORT, () => {
   console.log(`Server is listening on port ${process.env.PORT}`);
+});
+// requête
+app.get("/",(req,res)=>{
+res.send("Database connected");
 });
 module.exports = app;
