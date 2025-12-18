@@ -5,6 +5,7 @@ const app = express();
 const categorieRouter = require("./routes/categorie.route");
 const scategorieRouter =require("./routes/scategorie.route")
 const articleRouter =require("./routes/article.route")
+const userRouter =require("./routes/user.route")
 
 
 //config dotenv
@@ -25,6 +26,7 @@ mongoose
 app.use("/api/categories", categorieRouter);
 app.use('/api/scategories', scategorieRouter);
 app.use('/api/articles', articleRouter);
+app.use('/api/users', userRouter);
 
 //server
 app.listen(process.env.PORT, () => {
