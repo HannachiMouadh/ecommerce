@@ -15,7 +15,17 @@ router.get("/", async (req, res) => {
 });
 // créer un nouvel article
 router.post("/", async (req, res) => {
-  const nouvarticle = new Article(req.body);
+  const { reference, designation, prix, marque, qtestock, imageart, scategorieID } =
+    req.body;
+  const nouvarticle = new Article({
+    reference: reference,
+    designation: designation,
+    prix: prix,
+    marque: marque,
+    qtestock: qtestock,
+    scategorieID: scategorieID,
+    imageart: imageart,
+  });
   try {
     await nouvarticle.save();
     res.status(200).json(nouvarticle);
