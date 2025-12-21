@@ -18,13 +18,13 @@ router.post("/", async (req, res) => {
   const { reference, designation, prix, marque, qtestock, imageart, scategorieID } =
     req.body;
   const nouvarticle = new Article({
-    reference: reference,
-    designation: designation,
-    prix: prix,
-    marque: marque,
-    qtestock: qtestock,
-    scategorieID: scategorieID,
-    imageart: imageart,
+    reference,
+    designation,
+    prix,
+    marque,
+    qtestock,
+    scategorieID,
+    imageart,
   });
   try {
     await nouvarticle.save();
